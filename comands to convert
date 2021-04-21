@@ -1,0 +1,10 @@
+# Comnbine models
+sudo python /Users/pieterdevries/Documents/Workspace/asl/models/research/object_detection/exporter_main_v2.py --input_type image_tensor --pipeline_config_path /Users/pieterdevries/Documents/Workspace/asl/Tensorflow/workspace/models/my_ssd_mobnet/pipeline.config --trained_checkpoint_dir /Users/pieterdevries/Documents/Workspace/asl/Tensorflow/workspace/models/my_ssd_mobnet --output_directory /Users/pieterdevries/Documents/Workspace/asl/fine_tuned_model --use_side_inputs False
+
+# Save as web model
+cd in new modal folder
+
+fine_tuned_model % sudo tensorflowjs_converter \
+    --input_format=tf_saved_model \
+    /Users/pieterdevries/Documents/Workspace/asl/fine_tuned_model/saved_model \
+    /Users/pieterdevries/Documents/Workspace/asl/fine_tuned_model/web_model
