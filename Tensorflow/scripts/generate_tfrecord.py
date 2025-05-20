@@ -148,7 +148,7 @@ def create_tf_example(group, path):
     return tf_example
 
 
-def main(_):
+def main():
 
     writer = tf.python_io.TFRecordWriter(args.output_path)
     path = os.path.join(args.image_dir)
@@ -165,4 +165,4 @@ def main(_):
 
 
 if __name__ == '__main__':
-    tf.app.run()
+    main()
